@@ -1,0 +1,92 @@
+<DOCTYPE! html>
+<html>
+<head>
+	<script>
+		function eval(){
+			var Nme = document.PizzaForm.name.value ;
+			var Add = document.PizzaForm.address.value ;
+			var Eml = document.PizzaForm.email.value ;
+			var Sze = document.PizzaForm.size.value ;
+			var Tpe = document.PizzaForm.type.value ;
+			var TP1 = document.PizzaForm.Bacon.checked ;
+			var TP2 = document.PizzaForm.Chicken.checked ;
+			var TP3 = document.PizzaForm.Sausage.checked ;
+			var TP4 = document.PizzaForm.Mushrooms.checked ;
+			var TP5 = document.PizzaForm.Pepperoni.checked ;
+
+			var NumTop = 0;
+			if (TP1){NumTop=NumTop+1; }
+			if (TP2){NumTop=NumTop+1; }
+			if (TP3){NumTop=NumTop+1; }
+			if (TP4){NumTop=NumTop+1; }
+			if (TP5){NumTop=NumTop+1; }
+
+			if (Nme == "") { window.alert("Please enter your name"); return;}
+			if (Add == "") { window.alert("Please enter your address"); return;}
+			if (Eml == "") { window.alert("Please enter your email"); return;}
+			if (Sze == "") { window.alert("Please pick a size"); return;}
+
+
+			if (Tpe=="Deep Dish"){
+			if (Sze=="Small"){window.alert("Sorry, we do not make deep dish pizza in size small.")}
+			if (NumTop > 4 || NumTop < 1){window.alert("Please pick at least one topping but no more than 4 for Deep Dish Pizza.") }	}
+			else if (Tpe=="Regular"){
+			if (NumTop > 3 || NumTop < 1){window.alert("Please pick at least one topping but no more than 3 for Regular Pizza.") }	}
+
+			order();
+			function order(){
+				document.write("Thank you for your order, " + Nme + "!");
+				document.write("<br>");
+				document.write("Your order of " + Sze + " " + Tpe + " Pizza with ");
+				if (TP1){document.write("Bacon, ");}
+				if (TP2){document.write("Chicken, ");}
+				if (TP3){document.write("Sausage, ");}
+				if (TP4){document.write("Mushrooms, ");}
+				if (TP5){document.write("Pepperoni, ");}
+				document.write("has been processed.");
+				document.write("<br>");
+				document.write("It will be delivered to the provided address: " + Add);
+				document.write("<br>");
+				document.write("A confirmation has been sent to " + Eml + " . Please make sure to sure to check your spam folder.");
+				document.write("<br>");
+
+				var Price = 0;
+				if (Sze == "Small"){Price = Price + 5;}
+				else if (Sze == "Medium"){Price = Price + 8;}
+				else {Price = Price + 10;}
+
+				if(Tpe=="Deep Dish"){Price = Price + 4;}
+				Price = Price + 3 * NumTop;
+
+				document.write("The total will be $" + Price + ".00 . Please tip the driver.");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form name = "PizzaForm">
+		<h1>Welcome to Papi's Pizza</h1>
+		<h2>Customer Information:</h2>
+		Name:<input type="text" name="name" />
+		Address:<input type="text" name="address" />
+		Email:<input type="email" name="email"/>
+		<h2>Pizza Size:</h2>
+		<input type="radio" name="size" value="Small">Small</input><br/>
+		<input type="radio" name="size" value="Medium">Medium</input><br/>
+		<input type="radio" name="size" value="Large">Large</input><br/>
+		<h2>Pizza Type:</h2>
+		<select name="type">
+		<option value="Regular">Regular</option>
+		<option value="Deep Dish">Deep Dish</option>
+		</select>
+		<h2>Pizza Toppings:</h2>
+		<input type="checkbox" name="Bacon">Bacon</input>
+		<input type="checkbox" name="Chicken">Chicken</input>
+		<input type="checkbox" name="Sausage">Sausage</input>
+		<input type="checkbox" name="Mushrooms">Mushrooms</input>
+		<input type="checkbox" name="Pepperoni">Pepperoni</input><br/>
+		<button onclick="eval();" >Evaluate</button>
+	</form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<script>
+			const fName = prompt("What is your first name?");
+			const lName = prompt("What is your last name?");
+			const check = confirm(`Is it okay if I call you ${fName}?`);
+			const name = check ? fName : lName;
+			const temp = prompt("Enter the temp to convert:");
+			const unit = prompt("Enter the unit of the temp (C/F):");
+
+			let newT;
+			if (unit.toUpperCase() === "C") {
+				newT = temp * 9 / 5 + 32;
+			}
+			else {
+				newT = (temp - 32) * 5 / 9;
+			}
+			
+			newT = newT.toFixed(3);
+			document.write(`<h1>Hello ${name}:</h1>`);
+			document.write(`<p>${temp} ${unit.toUpperCase()} is ${newT} ${unit.toUpperCase() === "C" ? "Fahrenheit" : "Celsius"}</p>`);
+			</script>
+	</body>
+</html>

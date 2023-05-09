@@ -1,0 +1,35 @@
+body {
+    background-color: lightblue;
+}
+
+p {
+	color: Blue;
+	font-family:courier;
+}
+
+p::first-letter {
+	color: red;
+	font-weight: bold;
+	font-size: x-large;
+}
+
+p::first-line {
+    color: HotPink;
+    font-variant: small-caps;
+}
+
+
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: blue;

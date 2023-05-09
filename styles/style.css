@@ -1,0 +1,26 @@
+h1, h2 {
+	color: #4A4A4A;
+	text-transform: uppercase;
+}
+
+.background {
+	margin-top: 12px;
+	margin-bottom: 12px;
+    margin-left: 20%;
+    margin-right: 20%;
+	padding: 3%;
+}
+
+body  {
+	background-image: url("../images/bg.png");
+	background-size: cover;
+}
+
+p {
+	color: red;
+	background-color: #DDDDDD;
+}
+
+.p2 {
+	color: #008080;
+}

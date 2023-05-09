@@ -1,0 +1,50 @@
+body {
+	font-family: cursive;
+}
+
+h1 {
+	text-align: center;
+}
+
+img {
+	float: right;
+	width: 150px;
+	height: 150px;
+}
+
+.parent {
+	display: flex;
+}
+
+.child {
+	width: 25%;
+	border-style: solid;
+	border-width: 1px;
+	margin: 1%;
+}
+
+.child:hover {
+	transform:scale(110%);
+	font-size: 120%;
+}
+
+.parent > :nth-child(odd) {
+	background-color: #A67866;
+}
+
+.parent > :nth-child(even) {
+	background-color: #BEA895;
+}
+
+summary, h3 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+li {
+	list-style-type: square;
+}
+
+footer {
+	height: 100px;
+}

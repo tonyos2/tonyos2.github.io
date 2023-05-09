@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Form</title>
+	<h2>Web Form</h2>
+	<script>
+		function displayData() {
+			var name = document.getElementById("name").value;
+			var email = document.getElementById("email").value;
+			var password = document.getElementById("password").value;
+			var comments = document.getElementById("comments").value;
+			var output = document.getElementById("output");
+			output.innerHTML = "<i>Name:</i> " + name + "<br><i>Email:</i> " + email + "<br><i>Password:</i> " + password + "<br><i>Comments:</i> " + comments;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<label for="name"><b>Name:</b></label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="email"><b>Email:</b></label>
+		<input type="email" id="email" name="email"><br><br>
+		<label for="password"><b>Password:</b></label>
+		<input type="password" id="password" name="password"><br><br>
+		<label for="comments"><b>Comments:</b></label>
+		<textarea id="comments" name="comments"></textarea><br><br>
+		<input type="button" value="Submit" onclick="displayData()">
+	</form>
+	<p id="output" style="border: 2px solid black; padding: 10px; width: 40%">Output goes here.</p>
+</body>
+</html>
